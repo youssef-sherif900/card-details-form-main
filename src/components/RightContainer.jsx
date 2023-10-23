@@ -60,7 +60,7 @@ function RightContainer({ changing, validate }) {
         <Submitted clicked={handleClick} />
       ) : (
         <Form className="form" onSubmit={handleSubmit}>
-          <Form.Group>
+          <Form.Group className="form-group">
             <Form.Label>CARD HOLDER NAME</Form.Label>
             <FormControl
               name="userName"
