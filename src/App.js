@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import LeftContainer from './components/LeftContainer';
+import RightContainer from './components/RightContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
+  const [info , setInfo] = useState({
+    cardNumber:"0000000000000000",
+    userName:"USER NAME",
+    M:"00",
+    Y:"00",
+    cvc:"000"
+  })
+  let changingEvents = (e) =>{
+    let {name , value} = e.target
+    setInfo(prev =>{return{
+      ...prev,
+      [name]:value
+    }})
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <LeftContainer
+     cardNumber={info.cardNumber}
+     userName={info.userName}
+     m ={info.M}
+     y={info.Y}
+     cvc = {info.cvc}
+       />
+    <RightContainer changing ={changingEvents} validate={info} />
     </div>
   );
 }
