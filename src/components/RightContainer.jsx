@@ -88,7 +88,7 @@ function RightContainer({ changing, validate }) {
             </p>
           </Form.Group>
 
-          <Form.Group>
+          <Form.Group className="form-group">
             <Form.Label>CARD NUMBER</Form.Label>
             <FormControl
               name="cardNumber"
