@@ -206,10 +206,11 @@ input::placeholder{
     flex-direction: column;
   }
   .left_container{
-    width:100%;
+    width:100vw;
     height:30%;
     background-image: url(../images/bg-main-desktop.png);
     position: relative;
+    background-size: cover;
     }
 
     .right_container{
